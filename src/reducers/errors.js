@@ -1,4 +1,4 @@
-import { PARSE_ERROR, RESET_ERROR } from "../actions/action-types";
+import { PARSE_ERROR, RESET_ERROR } from "../constants/errorConstant";
 
 const initialState = {
   message: ""

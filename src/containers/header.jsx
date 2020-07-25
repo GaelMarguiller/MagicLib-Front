@@ -1,7 +1,6 @@
 import React from 'react';
-import {connect, useSelector} from 'react-redux';
-//import {setAuthentification} from '../actions/index';
-import {Link} from 'react-router-dom';
+import { connect, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const isLoggedIn = useSelector(state => state.authentification.isLoggedIn)

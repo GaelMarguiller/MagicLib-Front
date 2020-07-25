@@ -1,11 +1,10 @@
 import Header from '../containers/header';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home } from './home';
-import SignIn from './signin';
-import { SignOut } from './signout';
-import SignUp from './signup';
-import Errors from './errors';
+import SignIn from './userComponent/signin';
+import { SignOut } from './userComponent/signout';
+import SignUp from './userComponent/signup';
+import Errors from './errorComponent/errors';
 require('../style.css');
 
 export const App= () => {
@@ -15,7 +14,7 @@ export const App= () => {
         <div className='container body-content'>
           <Errors />
           <Switch>
-            <Route exact path='/' component={ Home } />
+            <Route exact path='/'/>
             <Route exact path='/signin' component={SignIn} />
             <Route exact path='/signout' component={SignOut} />
             <Route exact path='/signup' component={SignUp} />

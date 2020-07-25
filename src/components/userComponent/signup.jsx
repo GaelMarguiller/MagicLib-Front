@@ -2,8 +2,8 @@ import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import { useDispatch } from 'react-redux';
 
-import * as actions from '../actions';
-import * as validations from '../validations';
+import * as actions from '../../actions/userActions';
+import * as validations from '../../validations/validateForm';
 
 const FIELDS = {
     email: 'email',

@@ -2,7 +2,7 @@ import React  from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { useDispatch } from 'react-redux';
 
-import * as actions from '../actions';
+import * as actions from '../../actions/userActions';
 
 const FIELDS = { email: 'email', password: 'password' };
 

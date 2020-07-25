@@ -6,7 +6,7 @@ import thunk from "redux-thunk";
 import { App } from "./components/app";
 import reducers from "./reducers";
 import { BrowserRouter } from "react-router-dom";
-import { setAuthentification } from "./actions";
+import { setAuthentification } from "./actions/userActions";
 const invariant = require("redux-immutable-state-invariant").default();
 
 const createStoreWithMiddleware = applyMiddleware(

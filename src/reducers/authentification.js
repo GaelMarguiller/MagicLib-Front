@@ -1,4 +1,4 @@
-import { SET_AUTHENTIFICATION } from "../actions/action-types";
+import { SET_AUTHENTIFICATION } from "../constants/userConstant";
 
 const initialState = {
   isLoggedIn: false

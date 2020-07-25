@@ -1,7 +1,7 @@
-import React, {useEffect} from 'react';
-import {connect, useSelector, useDispatch} from 'react-redux';
-import * as actions from '../actions';
-import {withRouter} from 'react-router';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../../actions/errorActions';
+import { withRouter } from 'react-router';
 
 const Errors = () => {
     const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const Errors = () => {
 
     useEffect(() => {
         dispatch(actions.resetError());
-    })
+    }, [])
     return (
         error &&
         <div className='alert alert-danger' role='alert'>
@@ -18,4 +18,4 @@ const Errors = () => {
     );
 }
 
-export default withRouter(connect(null, actions)(Errors));
+export default withRouter((Errors));
