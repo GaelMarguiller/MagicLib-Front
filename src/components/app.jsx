@@ -1,29 +1,26 @@
-
-
-import { Route, Switch } from "react-router-dom";
-import React from "react";
-import Ressources from "../containers/ressources"
-import SigninForm from "./signin";
-import Signout from "./signout"
-import requireAuth from '../helpers/require-authentification';
-import Home from "./home";
 import Header from '../containers/header';
-require("../style.css");
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { Home } from './home';
+import SignIn from './signin';
+import { SignOut } from './signout';
+import SignUp from './signup';
+import Errors from './errors';
+require('../style.css');
 
-const App = () => {
+export const App= () => {
   return (
-    <div >
-      <Header />
-      <div className="container body_content">
-        <Switch >
-          <Route exact path="/" component={Home} />
-          <Route path="/ressources" component={requireAuth(Ressources)} />
-          <Route exact path="/signin" component={SigninForm} />
-          <Route exact path="/signout" component={Signout} />
-        </Switch>
+      <div>
+        <Header />
+        <div className='container body-content'>
+          <Errors />
+          <Switch>
+            <Route exact path='/' component={ Home } />
+            <Route exact path='/signin' component={SignIn} />
+            <Route exact path='/signout' component={SignOut} />
+            <Route exact path='/signup' component={SignUp} />
+          </Switch>
+        </div>
       </div>
-    </div>
   );
-};
-
-export default App;
+}
