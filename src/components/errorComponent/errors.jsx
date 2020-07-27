@@ -9,7 +9,7 @@ const Errors = () => {
 
     useEffect(() => {
         dispatch(actions.resetError());
-    }, [])
+    })
     return (
         error &&
         <div className='alert alert-danger' role='alert'>

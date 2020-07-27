@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import {SET_AUTHENTIFICATION} from '../constants/userConstant';
-import { parseError } from '../actions/errorActions';
+import {SET_AUTHENTIFICATION} from '../constants/userTypes';
+import { parseError } from './errorActions';
 
 const BASE_URL = 'http://localhost:3090';
 

@@ -1,8 +1,9 @@
-import { SET_AUTHENTIFICATION } from "../constants/userConstant";
+import { SET_AUTHENTIFICATION } from "../constants/userTypes";
 
 const initialState = {
   isLoggedIn: false
 };
+
 export default function AuthentificationReducer(state = initialState, action) {
   switch (action.type) {
     case SET_AUTHENTIFICATION:

@@ -1,4 +1,4 @@
-import { PARSE_ERROR, RESET_ERROR } from "../constants/errorConstant";
+import { PARSE_ERROR, RESET_ERROR } from "../constants/errorTypes";
 
 const initialState = {
   message: ""
