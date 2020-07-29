@@ -28,7 +28,7 @@ const Header = () => {
                 <Link className='nav-link' to={'/'}>Accueil</Link>
             </li>
             <li className='nav-item'>
-                <Link className='nav-link' to={'/ressources'}>Ressources</Link>
+                <Link className='nav-link' to={'/sets'}>Sets</Link>
             </li>
             {renderAuthentificationLink()}
         </ul>

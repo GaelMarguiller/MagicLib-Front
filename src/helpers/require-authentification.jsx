@@ -1,26 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { useEffect } from "react";
+import { connect, useSelector } from "react-redux";
 
 export default function(ChildComponent) {
-  class RequireAuthentification extends Component {
-    componentWillMount() {
-      if (!this.props.isLoggedIn) {
-        this.props.history.push("/");
+  const RequireAuthentification = props => {
+    const {history} = props
+    const isLoggedIn = useSelector(state => state.authentification.isLoggedIn)
+
+    useEffect(() => {
+      if (!isLoggedIn) {
+        history.push('/')
       }
-    }
-    componentWillUpdate(nextProps) {
-      if (!nextProps.isLoggedIn) {
-        this.props.history.push("/");
-      }
-    }
-    render() {
-      return this.props.isLoggedIn && <ChildComponent />;
-    }
+    }, [isLoggedIn, history]);
+
+    return isLoggedIn && <ChildComponent />;
   }
 
-  const mapStateToProps = state => ({
-    isLoggedIn: state.authentification.isLoggedIn
-  });
-
-  return connect(mapStateToProps)(RequireAuthentification);
+  return connect(null)(RequireAuthentification);
 }

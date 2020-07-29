@@ -2,13 +2,14 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
 import Header from '../containers/header';
+import {Home} from "./home";
+import {Setlists} from "./setsComponent/setsList";
 import SignIn from './userComponent/signin';
 import {SignOut} from './userComponent/signout';
 import SignUp from './userComponent/signup';
 import Errors from './errorComponent/errors';
 
 import RequireAuthentification from '../helpers/require-authentification'
-import {Home} from "./home";
 
 require('../style.css');
 
@@ -20,7 +21,7 @@ export const App = () => {
                 <Errors/>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route exact path='/ressouces' component={RequireAuthentification}/>
+                    <Route exact path='/sets' component={RequireAuthentification(Setlists)}/>
                     <Route exact path='/signin' component={SignIn}/>
                     <Route exact path='/signout' component={SignOut}/>
                     <Route exact path='/signup' component={SignUp}/>
