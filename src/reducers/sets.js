@@ -5,10 +5,8 @@ import {
 } from "../constants/setTypes";
 
 const initialState = {
-    id:'',
-    name: '',
-    icon: '',
-    setType: ''
+   setsList: []
+
 };
 
 export default function SetsReducer(state = initialState, action) {
@@ -20,8 +18,7 @@ export default function SetsReducer(state = initialState, action) {
             };
         case GET_LIST_SETS_SUCCEEDED:
             return {
-                ...state,
-                sets: action.payload,
+                setsList: action.payload,
                 fetching: action.fetching
             };
         case GET_LIST_SETS_FAILED:

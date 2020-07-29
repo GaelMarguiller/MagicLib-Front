@@ -1,12 +1,8 @@
-//import axios from 'axios';
+import axios from 'axios';
 
-import {
-    GET_LIST_SETS,
-    GET_LIST_SETS_FAILED,
-    GET_LIST_SETS_SUCCEEDED
-} from "../constants/setTypes";
+import {GET_LIST_SETS, GET_LIST_SETS_FAILED, GET_LIST_SETS_SUCCEEDED} from '../constants/setTypes';
 
-const API_URL = 'https://api.scryfall.com/sets';
+const API_URL = 'https://api.scryfall.com/sets?type=core';
 
 export const requestSets = () => {
     return {
@@ -32,25 +28,13 @@ export const requestSetsFailed = (error) => {
 }
 
 export function getAllSets() {
-    console.log('toto')
     return dispatch => {
-        console.log('tutu')
         dispatch(requestSets())
-        console.log('tata');
-        return fetch(API_URL, {
-            method: 'GET'
-        })
+        return axios.get(API_URL)
             .then(response => {
-                console.log(response)
-                if (!response.status === 200) {
-                    throw new Error('Error - 404 not found')
-                }
+                dispatch(requestSetsSuccess(response.data.data));
             })
-            .then((response) => {
-                console.log(response)
-                dispatch(requestSetsSuccess(response));
-            })
-            .catch((error) => {
+            .catch(error => {
                 console.log(error);
                 dispatch(requestSetsFailed(error));
             })

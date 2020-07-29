@@ -5,3 +5,30 @@
 .error {
     color: red
 }
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.setBlock {
+    display: flex;
+    flex-direction: row;
+    place-items: center center;
+    justify-content: center;
+}
+
+.setName {
+    margin: 1rem 1rem 0 1rem;
+}
+
+.setType {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.setIcon {
+    width: 15%;
+}
