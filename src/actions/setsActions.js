@@ -32,11 +32,14 @@ export function getAllSets() {
         dispatch(requestSets())
         return axios.get(API_URL)
             .then(response => {
-                dispatch(requestSetsSuccess(response.data.data));
+                const setsList = response.data.data.filter(set =>
+                    set.set_type === 'core' || set.set_type === 'expansion'
+                );
+                dispatch(requestSetsSuccess(setsList));
             })
             .catch(error => {
                 console.log(error);
                 dispatch(requestSetsFailed(error));
-            })
+            });
     }
 }
