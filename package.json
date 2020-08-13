@@ -18,13 +18,34 @@
     "redux": "^4.0.5",
     "redux-form": "^8.3.6",
     "redux-immutable-state-invariant": "^2.1.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.16.3",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^5.1.1",
+    "morgan": "^1.9.0",
+    "passport": "0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "nodemon --exec babel-node server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -2,14 +2,14 @@ import {
     GET_LIST_SETS,
     GET_LIST_SETS_FAILED,
     GET_LIST_SETS_SUCCEEDED
-} from "../constants/setTypes";
+} from '../../constants/setsListTypes';
 
 const initialState = {
    setsList: []
 
 };
 
-export default function SetsReducer(state = initialState, action) {
+export default function SetsListReducer(state = initialState, action) {
     switch (action.type) {
         case GET_LIST_SETS:
             return {

@@ -3,7 +3,7 @@ import { reducer as form } from "redux-form";
 
 import AuthentificationReducer from "./authentification";
 import ErrorsReducer from "./errors";
-import SetsReducer from "./sets";
+import SetsReducer from "./setsReducer";
 
 const rootReducer = combineReducers({
   form,
