@@ -1,8 +1,6 @@
-const id = undefined
-
 export const BASE_URL = '/'
 export const SETS_URL = `${BASE_URL}sets`
-export const SET_URL = `${BASE_URL}set/${id}`
+export const SET_URL = `${BASE_URL}set`
 export const SIGNIN_URL = `${BASE_URL}signin`
 export const SIGNOUT_URL = `${BASE_URL}signout`
 export const SIGNUP_URL = `${BASE_URL}signup`

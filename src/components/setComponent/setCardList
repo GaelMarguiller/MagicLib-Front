@@ -1,9 +1,0 @@
-import React from 'react';
-
-export const SetListCard = () => {
-    return (
-        <div>
-            coucou
-        </div>
-    )
-}

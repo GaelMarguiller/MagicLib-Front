@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import Header from '../containers/header';
 import {Home} from './home';
 import {SetsList} from './setsComponent/setsList';
-import { SetListCard } from './setComponent/setCardList';
+import {SetsCardList} from './setComponent/setsCardList';
 import SignIn from './userComponent/signin';
 import {SignOut} from './userComponent/signout';
 import SignUp from './userComponent/signup';
@@ -25,7 +25,7 @@ export const App = () => {
                 <Switch>
                     <Route exact path={`${url.BASE_URL}`} component={Home}/>
                     <Route exact path={`${url.SETS_URL}`} component={RequireAuthentification(SetsList)}/>
-                    <Route exact path={`${url.SET_URL}`} component={RequireAuthentification(SetListCard)}/>
+                    <Route exact path={`${url.SET_URL}/:id`} component={RequireAuthentification(SetsCardList)}/>
                     <Route exact path={`${url.SIGNIN_URL}`} component={SignIn}/>
                     <Route exact path={`${url.SIGNOUT_URL}`} component={SignOut}/>
                     <Route exact path={`${url.SIGNUP_URL}`} component={SignUp}/>

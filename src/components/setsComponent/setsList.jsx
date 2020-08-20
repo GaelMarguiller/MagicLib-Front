@@ -8,6 +8,7 @@ import { getAllSets } from '../../actions/setsActions'
 export const SetsList = () => {
     const dispatch = useDispatch();
     const sets = useSelector(state => state.sets.sets);
+    console.log(sets)
 
     useEffect(() => {
         dispatch(getAllSets());
@@ -17,7 +18,7 @@ export const SetsList = () => {
         .filter(set => set.block_code === 'lea')
         .map(set => {
             return (
-                <Tile props={set} key={set.id}/>
+                <Tile {...set} key={set.id}/>
             );
         });
 
@@ -25,7 +26,7 @@ export const SetsList = () => {
         .filter(set => set.block_code !== 'lea' && set.block_code !== undefined)
         .map(set => {
             return (
-                <Tile props={set} key={set.id}/>
+                <Tile {...set} key={set.id}/>
             );
         });
 
@@ -33,7 +34,7 @@ export const SetsList = () => {
         .filter(set => set.block_code === undefined)
         .map(set => {
             return (
-                <Tile props={set} key={set.id}/>
+                <Tile {...set} key={set.id}/>
             );
         });
 

@@ -1,27 +1,27 @@
 import {
-    GET_SET,
-    GET_SET_SUCCEEDED,
-    GET_SET_FAILED
-} from '../../constants/setTypes';
+    GET_CARDS_LIST,
+    GET_CARDS_LIST_SUCCEEDED,
+    GET_CARDS_LIST_FAILED
+} from '../constants/cardListTypes';
 
 const initialState = {
-    set: []
+    cardsList: []
 
 };
 
-export default function SetReducer(state = initialState, action) {
+export default function CardsListReducer(state = initialState, action) {
     switch (action.type) {
-        case GET_SET:
+        case GET_CARDS_LIST:
             return {
                 ...state,
                 fetching: action.fetching
             };
-        case GET_SET_SUCCEEDED:
+        case GET_CARDS_LIST_SUCCEEDED:
             return {
-                set: action.payload,
+                cardsList: action.payload,
                 fetching: action.fetching
             };
-        case GET_SET_FAILED:
+        case GET_CARDS_LIST_FAILED:
             return {
                 ...state,
                 fetching: action.fetching,
