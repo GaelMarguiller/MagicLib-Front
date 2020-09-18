@@ -18,6 +18,7 @@ export default function CardsListReducer(state = initialState, action) {
             };
         case GET_CARDS_LIST_SUCCEEDED:
             return {
+                ...state,
                 cardsList: action.payload,
                 fetching: action.fetching
             };

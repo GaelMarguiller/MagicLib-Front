@@ -8,7 +8,6 @@ import { getAllSets } from '../../actions/setsActions'
 export const SetsList = () => {
     const dispatch = useDispatch();
     const sets = useSelector(state => state.sets.sets);
-    console.log(sets)
 
     useEffect(() => {
         dispatch(getAllSets());

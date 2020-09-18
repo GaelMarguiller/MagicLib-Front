@@ -18,6 +18,7 @@ export default function SetReducer(state = initialState, action) {
             };
         case GET_SET_SUCCEEDED:
             return {
+                ...state,
                 set: action.payload,
                 fetching: action.fetching
             };

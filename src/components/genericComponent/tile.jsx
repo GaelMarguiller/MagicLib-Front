@@ -6,7 +6,7 @@ import * as urlActions from '../../actions/urlActions'
 export const Tile = props => {
     const [blockState]  = useState(props);
     return (
-        <Link className='stretched-link'
+        <Link className='stretched-link card tile-set'
               key={blockState.code}
               to={urlActions.getSetUrl(blockState.code)}
         >

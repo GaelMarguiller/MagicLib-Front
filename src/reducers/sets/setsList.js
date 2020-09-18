@@ -18,6 +18,7 @@ export default function SetsListReducer(state = initialState, action) {
             };
         case GET_LIST_SETS_SUCCEEDED:
             return {
+                ...state,
                 setsList: action.payload,
                 fetching: action.fetching
             };

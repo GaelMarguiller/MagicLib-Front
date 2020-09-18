@@ -2,6 +2,10 @@
     margin-top: 5%;
 }
 
+.container {
+    max-width: 1540px;
+}
+
 .error {
     color: red
 }
@@ -29,18 +33,53 @@
 .setDescription {
     padding: 1rem 0;
     border-bottom: 1px solid #000000;
+    text-align: center;
 }
 
 .titleBlock {
     text-align: center;
+    display: flex;
+    place-items: center center;
+    place-content: center center;
+    place-self: center center;
+    margin: 1rem auto;
 }
 
 .setName {
-    width: 65%;
+    width: 35%;
     margin: 0 1rem;
 }
 
 .blockIcon {
     width: 20%;
     margin-right: 1rem;
+}
+
+
+.tile-set {
+    margin: 1rem 0;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #009688;
+}
+
+.cardsList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile-card{
+    width: 22%;
+    margin: 1rem;
+}
+
+.blockCardImg {
+    text-align: center;
+    padding: 15px;
+}
+
+.blockCardImg > img {
+    width: 100%;
 }

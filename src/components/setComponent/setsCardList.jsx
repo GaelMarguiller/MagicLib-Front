@@ -10,7 +10,6 @@ export const SetsCardList = () => {
     const dispatch = useDispatch();
     const block = useSelector(state => state.sets.set);
     const cardList = useSelector(state => state.cardsList);
-    console.log(cardList)
 
     useEffect(() => {
         dispatch(getSet(id));
@@ -19,9 +18,8 @@ export const SetsCardList = () => {
 
     const renderCardsList =cardList.fetching !== true && cardList.cardsList.map(card => {
         return (
-            <div className="container card">
-                <div className="cardName">{card.name}</div>
-                <div className="blockCardImg">
+            <div className="card tile-card">
+                <div className="container blockCardImg">
                     <img src={card.image_uris['normal']} alt={card.name}/>
                 </div>
             </div>
@@ -30,9 +28,11 @@ export const SetsCardList = () => {
     return (
         <div>
            <div className='blockSet'>
-               <h3>{block.set.setName}</h3>
-               <div className='blockIcon'>
-                   <img src={block.set.setIcon} alt={block.set.setName}/>
+               <div className='titleBlock'>
+                   <div className='blockIcon'>
+                       <img src={block.set.setIcon} alt={block.set.setName}/>
+                   </div>
+                   <h3>{block.set.setName}</h3>
                </div>
                <div className="container cardsList">
                    {renderCardsList}
